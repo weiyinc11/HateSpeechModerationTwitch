@@ -1,0 +1,26 @@
+{
+  "name": "contentmodtwitch",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@json2csv/plainjs": "^7.0.6",
+    "@twurple/eventsub": "^5.3.4",
+    "@twurple/eventsub-ngrok": "^7.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "json2csv": "^6.0.0-alpha.2",
+    "selenium-webdriver": "^4.22.0",
+    "tmi.js": "^1.8.5",
+    "twitch": "^4.6.7",
+    "twitch-auth": "^4.6.7",
+    "twitch-js": "^2.0.0-beta.45",
+    "twitch-webhooks": "^4.0.12",
+    "websocket": "^1.0.35"
+  },
+  "description": ""
+}

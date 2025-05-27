@@ -1,0 +1,71 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DirectConnectionAdapter = void 0;
+const tslib_1 = require("tslib");
+const shared_utils_1 = require("@d-fischer/shared-utils");
+const common_1 = require("@twurple/common");
+const https = require("https");
+const checks_1 = require("../checks");
+const ConnectionAdapter_1 = require("./ConnectionAdapter");
+/**
+ * A WebHook connection adapter that enables a direct connection.
+ *
+ * Requires the server to be directly available to the internet.
+ *
+ * @hideProtected
+ *
+ * @meta category adapters
+ */
+let DirectConnectionAdapter = class DirectConnectionAdapter extends ConnectionAdapter_1.ConnectionAdapter {
+    /**
+     * Creates a new simple WebHook adapter.
+     *
+     * @expandParams
+     *
+     * @param options
+     */
+    constructor(options) {
+        super();
+        (0, checks_1.checkHostName)(options.hostName);
+        this._hostName = options.hostName;
+        this._ssl = options.sslCert;
+    }
+    /**
+     * Updates the SSL certificate, for example if the old one is expired.
+     *
+     * @expandParams
+     *
+     * @param ssl The new certificate data.
+     */
+    updateSslCertificate(ssl) {
+        var _a;
+        this._ssl = ssl;
+        (_a = this._httpsServer) === null || _a === void 0 ? void 0 : _a.setSecureContext(ssl);
+    }
+    /** @protected */
+    createHttpServer() {
+        return (this._httpsServer = https.createServer({
+            key: this._ssl.key,
+            cert: this._ssl.cert
+        }));
+    }
+    /** @protected */
+    // eslint-disable-next-line @typescript-eslint/class-literal-property-style
+    get listenUsingSsl() {
+        return true;
+    }
+    /** @protected */
+    async getHostName() {
+        return this._hostName;
+    }
+};
+tslib_1.__decorate([
+    (0, shared_utils_1.Enumerable)(false)
+], DirectConnectionAdapter.prototype, "_ssl", void 0);
+tslib_1.__decorate([
+    (0, shared_utils_1.Enumerable)(false)
+], DirectConnectionAdapter.prototype, "_httpsServer", void 0);
+DirectConnectionAdapter = tslib_1.__decorate([
+    (0, common_1.rtfm)('eventsub-http', 'DirectConnectionAdapter')
+], DirectConnectionAdapter);
+exports.DirectConnectionAdapter = DirectConnectionAdapter;
