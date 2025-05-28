@@ -108,3 +108,8 @@ Running experiments with large datasets, we found that [`tmux`](https://github.c
     |       ├── SBIC
     |       └── ToxiGen
     
+### Experiment Result Analysis
+`/Case_studies` a directory that includes examples of our experimental design as outlined in the paper such as Counterfactual analysis, Policy Adherence Evaluation, and Robustness analysis. Each directory includes data with, for example, `slur` and `noslur` csvs along with our Python code for analysis. 
+
+`/Experimental_results` includes results of our multi-level experimental design as outlined in our paper. Please refer to the `readme.md` documentation for each case study analysis. 
+
