@@ -63,9 +63,48 @@ Using the output from above, fill in the respective information for your bot in 
     Output: {"access_token":"example_token_here","expires_in":13384,"refresh_token":"refresh_token_here","scope":["chat:edit","chat:read"],"token_type":"bearer"}
 
 ## 3. Running the experiment
-
 Via bot 2's account credentials, log into the Twitch Creator platform and manipulate the `automod` settings as you like. Please reference the paper to view examples of moderation ranges in the appendix. 
 
 Once you have uploaded your CSV data files into the `/dataToSendCSV/MM-DD-YYYY/` directory ensuring that message plaintexts are under the column name 'text', we can navigate to `/bashScript` to run the following command: `./experiment1.sh`
 
 Running experiments with large datasets, we found that [`tmux`](https://github.com/tmux/tmux/wiki) was helpful in containing separate experiments for prolonged periods of time avoiding disturbances in experiment processing. 
+
+## 4. Results and Analysis of the experiment
+    ├── Case_studies
+    │   ├── Counterfactual_analysis
+    |       ├── Data
+    |       ├── Results
+    |       └── readme.md 
+    |   ├── Policy_adherence_evaluation
+    |       ├── Data
+    |       ├── Results
+    |       └── readme.md    
+    |   └── Robustness_analysis
+    |       ├── Input
+    |       ├── Results
+    |       └── readme.md 
+    ├── Datasets
+    │       ├── DynaHate_Dataset_Creation.py
+    │       ├── Dynamically Generated Hate Dataset v0.2.3 (1).csv
+    │       ├── IHC.csv
+    │       ├── readme.md
+    │       ├── SBIC_Dataset_Creation.py
+    │       ├── SBIC.v2.trn.csv
+    │       ├── toxigen.csv
+    │       └── toxigen_Dataset_Creation.py
+    ├── Experimental_results
+    │   ├── Level1_results_overall_analysis
+    │       ├── Context_awareness_experiment
+    │       ├── Dynahate
+    |       ├── IHC
+    |       ├── SBIC
+    |       └── ToxiGen
+    |   ├── Level2_results_filterwise_analysis
+    │       ├── Dynahate
+    |       ├── SBIC
+    |       └── ToxiGen
+    |   └── Level3_results_targetgroupwise_analysis
+    │       ├── Dynahate
+    |       ├── SBIC
+    |       └── ToxiGen
+    
