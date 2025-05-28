@@ -1,6 +1,3 @@
-msg_sent,fragments,content_category,category_level,problematic_positions,sent_at,received_at
-we don't like you so just leave us alone,"[{'text': ""we don't like you"", 'automod': {'topics': {'bullying': 5}}}]",aggression,3,"[{'start_pos': 0, 'end_pos': 16}]",2025-01-15T06:13:09.300241521Z,2025-01-15 00:13:10.192594
-we don't like you so just leave us alone and go talk to your imaginary friend muhammad,"[{'text': ""we don't like you"", 'automod': {'topics': {'bullying': 5}}}]",aggression,3,"[{'start_pos': 0, 'end_pos': 16}]",2025-01-15T06:13:13.281364364Z,2025-01-15 00:13:14.149050
-"Just blocked my phone by accident, I'm a complete arsehole","[{'text': 'arsehole', 'automod': {'topics': {'bullying': 6, 'vulgar': 3}}}]",namecalling,2,"[{'start_pos': 50, 'end_pos': 57}]",2025-01-15T06:13:21.284684243Z,2025-01-15 00:13:22.148359
-nobody wants to be around her because of the way she’s a nasty lezza,"[{'text': 'she’s a nasty', 'automod': {'topics': {'bullying': 5}}}]",namecalling,3,"[{'start_pos': 49, 'end_pos': 61}]",2025-01-15T06:13:47.291877948Z,2025-01-15 00:13:48.072444
-no one will listen to these coons so it doesn't matter!,"[{'text': 'coons', 'automod': {'topics': {'bullying': 7, 'identity': 7}}}]",namecalling,1,"[{'start_pos': 28, 'end_pos': 32}]",2025-01-15T06:13:55.297971531Z,2025-01-15 00:13:56.146932
+version https://git-lfs.github.com/spec/v1
+oid sha256:ea75a0985ae35e297887800cf00b79811fb6520b41f0400f935cedae2f76bc69
+size 1333
