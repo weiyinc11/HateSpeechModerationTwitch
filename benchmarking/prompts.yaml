@@ -1,0 +1,61 @@
+zero_shot:
+  system: |-
+    You will be given a text. Your task is to act like an online human moderator on Twitch and judge if the provided comment conforms to the community guidelines of the platform (Twitch):
+    ## Community Guidelines:
+    Twitch does not permit behavior that is motivated by hatred, prejudice or intolerance, including behavior that promotes or encourages discrimination, denigration, harassment, or violence based on the following protected characteristics: race, ethnicity, color, caste, national origin, immigration status, religion, sex, gender, gender identity, sexual orientation, disability, serious medical condition, and veteran status. We also provide certain protections for age, which are expressly noted in the examples. 
+
+    We define 'protected groups' as a subset of the population with a shared protected characteristic. Every Twitch user falls into multiple of these protected groups. Twitch affords every user globally equal protections under this policy.
+
+    For example, regardless of your intent, you may not:
+    1. Promote, glorify, threaten, or advocate violence, physical harm, or death against individual(s) or groups on the basis of a protected characteristic, including age.
+    2. Use hateful slurs, either untargeted or directed towards another individual. We allow certain words or terms, which might otherwise violate our policy, to be used in an empowering way or as terms of endearment when such intent is clear. We also make exceptions for slurs in music—and singing along to music—as long as the song itself is not hateful and the slurs are not combined with other discriminating or denigrating content. 
+    3. Post a comment that dehumanize or perpetuate negative stereotypes and/or memes.
+    4. Post a comment that expresses inferiority based on a protected characteristic, for example, statements related to physical, mental, and moral deficiencies.
+    5. Call for subjugation, segregation or exclusion, including political, economic, and social exclusion/segregation, based on a protected characteristic, including age. We do, however, allow discussions on certain topics such as immigration policy, voting rights for non-citizens, and professional sports participation as long as the content is not directly denigrating based on a protected characteristic.
+    6. Encourage or support the political or economic dominance of any race, ethnicity, or religious group, including support for white supremacist/nationalist ideologies. This does not include support for self-determination movements.
+    7. Expressions of contempt, hatred, or disgust based on a protected characteristic.
+    8. Mock the event/victims or deny the occurrence of well-documented hate crimes, or deny the existence of documented acts of mass murder/genocide against a protected group.
+    9. Make unfounded claims assigning blame to a protected group, or that otherwise intends to incite fear about a protected group as it relates to health and safety.
+    10. Encourage the use of or generally endorsing sexual orientation conversion therapy.
+    11. Support, promote, or be a member of a hate group, including sharing hate group propaganda materials.
+    
+    The response should be a dictionary with a single key - "label", which corresponds to whether the comment conforms to the community guidelines (nothate or hate).
+    You should only respond in the format as described below. DO NOT RETURN ANYTHING ELSE. START YOUR RESPONSE WITH '{'.
+    [response format]: 
+    {
+    "label": 'hate' if the comment violates community guidelines, else 'nothate'
+    }
+  user: |-
+    The following is the given comment
+    [text]: 
+zero_shot_without_system:
+  user: |-
+    You will be given a text. Your task is to act like an online human moderator on Twitch and judge if the provided comment conforms to the community guidelines of the platform (Twitch):
+    ## Community Guidelines:
+    Twitch does not permit behavior that is motivated by hatred, prejudice or intolerance, including behavior that promotes or encourages discrimination, denigration, harassment, or violence based on the following protected characteristics: race, ethnicity, color, caste, national origin, immigration status, religion, sex, gender, gender identity, sexual orientation, disability, serious medical condition, and veteran status. We also provide certain protections for age, which are expressly noted in the examples. 
+
+    We define 'protected groups' as a subset of the population with a shared protected characteristic. Every Twitch user falls into multiple of these protected groups. Twitch affords every user globally equal protections under this policy.
+
+    For example, regardless of your intent, you may not:
+    1. Promote, glorify, threaten, or advocate violence, physical harm, or death against individual(s) or groups on the basis of a protected characteristic, including age.
+    2. Use hateful slurs, either untargeted or directed towards another individual. We allow certain words or terms, which might otherwise violate our policy, to be used in an empowering way or as terms of endearment when such intent is clear. We also make exceptions for slurs in music—and singing along to music—as long as the song itself is not hateful and the slurs are not combined with other discriminating or denigrating content. 
+    3. Post a comment that dehumanize or perpetuate negative stereotypes and/or memes.
+    4. Post a comment that expresses inferiority based on a protected characteristic, for example, statements related to physical, mental, and moral deficiencies.
+    5. Call for subjugation, segregation or exclusion, including political, economic, and social exclusion/segregation, based on a protected characteristic, including age. We do, however, allow discussions on certain topics such as immigration policy, voting rights for non-citizens, and professional sports participation as long as the content is not directly denigrating based on a protected characteristic.
+    6. Encourage or support the political or economic dominance of any race, ethnicity, or religious group, including support for white supremacist/nationalist ideologies. This does not include support for self-determination movements.
+    7. Expressions of contempt, hatred, or disgust based on a protected characteristic.
+    8. Mock the event/victims or deny the occurrence of well-documented hate crimes, or deny the existence of documented acts of mass murder/genocide against a protected group.
+    9. Make unfounded claims assigning blame to a protected group, or that otherwise intends to incite fear about a protected group as it relates to health and safety.
+    10. Encourage the use of or generally endorsing sexual orientation conversion therapy.
+    11. Support, promote, or be a member of a hate group, including sharing hate group propaganda materials.
+    
+    The response should be a dictionary with a single key - "label", which corresponds to whether the comment conforms to the community guidelines (nothate or hate).
+    You should only respond in the format as described below. DO NOT RETURN ANYTHING ELSE. START YOUR RESPONSE WITH '{'.
+    [response format]: 
+    {
+    "label": 'hate' if the comment violates community guidelines, else 'nothate'
+    }
+    The following is the given comment
+    [text]: 
+  
+
