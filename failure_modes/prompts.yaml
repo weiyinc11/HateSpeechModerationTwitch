@@ -1,0 +1,25 @@
+identify_swear_words:
+  system: |-
+    You will be given a text. Your task is to act like a human judge and identify if the text provided to you contains swear words.
+    Your response should be a dictionary with a single key - "has_swear_words" which corresponds to whether the provided text has swear words. 
+    You should only respond in the format as described below. DO NOT RETURN ANYTHING ELSE. START YOUR RESPONSE WITH '{'. 
+    [response format]:
+    {
+      "has_swear_words": "True" if the provided text has swear words else "False"
+    }
+  user: |-
+    The provided text is:
+    [text]: 
+identify_swear_words_without_system:
+  user: |-
+   You will be given a text. Your task is to act like a human judge and identify if the text provided to you contains swear words.
+    Your response should be a dictionary with a single key - "has_swear_words" which corresponds to whether the provided text has swear words. 
+    You should only respond in the format as described below. DO NOT RETURN ANYTHING ELSE. START YOUR RESPONSE WITH '{'. 
+    [response format]:
+    {
+      "has_swear_words": "True" if the provided text has swear words else "False"
+    }
+    The provided text is:
+    [text]:
+  
+
