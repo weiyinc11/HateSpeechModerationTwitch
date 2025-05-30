@@ -113,3 +113,32 @@ Running experiments with large datasets, we found that [`tmux`](https://github.c
 
 `/Experimental_results` includes results of our multi-level experimental design as outlined in our paper. Please refer to the `readme.md` documentation for each case study analysis. 
 
+### Comparison with SoTA language models
+We compare AutoMod to various language models (refer to Figure 2 in the paper). The code for prompting language models for this purpose is provided in `/benchmarking/`.
+
+First, use `run.py` to generate model outputs:
+
+
+```bash
+ python run.py --model <model_name> --model_p <path_to_model> --prompt_type <prompt_type> --save_file <name_of_output_file> -u <unique_run_id>
+ ```
+
+To understand the usage of other arguments:
+
+```bash
+python run.py --help
+```
+
+Next, use `add_model_labels.py` to extract labels from model outputs. 
+
+```bash
+python add_model_labels.py --save_file <save_file_name>
+```
+
+Now use `get_report.py` for each output file obtained using `add_model_labels.py`. Doing so will add the metrics for each model to a single CSV file. 
+
+```bash
+python get_report.py --result_file <output_with_label_file> --save_file <save_file_name> --model_name <model_name>
+```
+
+
