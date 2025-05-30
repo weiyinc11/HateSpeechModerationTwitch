@@ -141,4 +141,12 @@ Now use `get_report.py` for each output file obtained using `add_model_labels.py
 python get_report.py --result_file <output_with_label_file> --save_file <save_file_name> --model_name <model_name>
 ```
 
+### Error Analysis
+For analysis of false positives and false negatives (Section 4.2, FN/FP Analysis and Appendix D.3), we prompt the llama-3.3-70b model to identify the presence of swear words in a particular example. The code for these experiments is present in `/failure_modes/`. `run.py` and `add_model_labels.py` need to be used in a manner similar to what is shown for the previous section (Comparison to SoTA language models), albeit with a different prompt. The difference being that, one may use the `--dataset` flag to specify a particular dataset (in the paper, we explain DynaHate's high false positives by detecting swear words in the false positive set) and `--error_type` to specify the paritcular subset of examples (false negative (fn) or false positive (fp)) to operate on. The usage of other arguments may be explored using the `--help` flag. Our final result file with the labels obtained from llama-3.3-70b can be found in the `/results/final_outputs/` directory. 
+
+Example usage:
+
+```bash 
+python run.py --model_p <path_to_llama_3.3_70b> --prompt_type "identify_swear_words_without_system" --user_prompt_only --error_type "fn"
+```
 
